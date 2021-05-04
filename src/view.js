@@ -15,6 +15,7 @@ class View {
 
   getWeather() {
     const query = this.searchBar.querySelector(".city-search-bar").value;
+
     this.clearInput();
     return query;
   }
@@ -28,7 +29,7 @@ class View {
         <p><span>${data.date}</span></p><br>
         <h2>${data.name}, ${data.country}</h2>
         <div class="temperature-container">
-          <img src="${data.smallIcon}" class="" alt="small weather icon">
+          <img src="${data.iconSmall}" class="weather-icon" alt="small weather icon">
           <h1>${data.temp}<sup>°${data.unit === "metric" ? "C" : "F"}</sup></h1> 
         </div>
         <p>${data.description}</p>
@@ -41,24 +42,24 @@ class View {
         <div class="degree-switch">
           <div class="degree-select celcius ${data.unit === "metric" ? "degree-select-active" : ""}" data-unit="metric">C</div>
           <div class="degree-select fahrenheit ${data.unit === "imperial" ? "degree-select-active" : ""}" data-unit="imperial">F</div>
+        </div>
       </div>
-      </div>
-    `
+    `;
 
     this.clear();
-    this.parentElement.insertAdjacentElement("afterbegin", htmlMarkup);
+    this.parentElement.insertAdjacentHTML("afterbegin", htmlMarkup);
   }
 
-  showMessage(message = this._message) {
+  showMessage(message = this.message) {
     const htmlMarkup = `<span class="weather-message">${message}</span>`;
     this.clear();
-    this.parentElement.insertAdjacentElement("afterbegin", htmlMarkup)
+    this.parentElement.insertAdjacentHTML("afterbegin", htmlMarkup)
   }
 
   showSpinner() {
     const htmlMarkup = `<div class="weather-container-loader"></div>`;
     this.clear();
-    this.parentElement.insertAdjacentElement("afterbegin", htmlMarkup)
+    this.parentElement.insertAdjacentHTML("afterbegin", htmlMarkup)
   }
 
   addHandlerRender(handler) {
@@ -68,7 +69,8 @@ class View {
   addHandlerSearch(handler) {
     this.searchBar.addEventListener("submit", function (e) {
       e.preventDefault();
-      handler();
+      // console.log(e.target.city.value);
+      handler(e.target.city.value);
     });
   }
 
