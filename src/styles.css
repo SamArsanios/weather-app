@@ -6,21 +6,7 @@
 }
 
 body {
-  background-image: linear-gradient(
-    to left bottom,
-    #391a68,
-    #372871,
-    #353579,
-    #35407f,
-    #374b85,
-    #2b5184,
-    #235782,
-    #225b7e,
-    #1d5a72,
-    #235865,
-    #2d5559,
-    #37514f
-  );
+  background-color: #391a68;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -155,7 +141,6 @@ input {
   padding: 0 20px 0 40px;
   box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
   background-color: rgba(200, 200, 200, 0.2);
-  /* background-image: url("../dist/images/search-icon-white-one-md.png"); */
   background-size: 14px;
   background-repeat: no-repeat;
   background-position: 16px 48%;
