@@ -3,7 +3,7 @@
 # Weather App
 This is a simple weather application that shows the weather of different places in the world:
 
-![img](https://github.com/SamArsanios/restaurant-page/blob/restaurant-page/screenshot.JPG)
+![img](https://github.com/SamArsanios/weather-app/blob/weather-app/dist/images/screenshot.JPG)
 
 ## Built With
 ![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
