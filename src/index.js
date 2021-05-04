@@ -2,30 +2,29 @@ import * as weatherData from './weatherData';
 import view from './view';
 import './styles.css';
 
-const weatherLocation = function () {
-  view.showSpinner();
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(loadLocation, function () {
-      view.showMessage();
-    });
-  }
-};
-
-
 const loadLocation = async function (position) {
   try {
     const { latitude } = position.coords;
     const { longitude } = position.coords;
 
     // Load location weather
-    await weatherData.loadWeather([latitude, longitude])
+    await weatherData.loadWeather([latitude, longitude]);
 
     // Render weather data
     view.renderWeather(weatherData.weather.data);
   } catch (err) {
     console.error(err);
     view.showMessage(err.message);
+  }
+};
+
+const weatherLocation = function () {
+  view.showSpinner();
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(loadLocation, () => {
+      view.showMessage();
+    });
   }
 };
 
