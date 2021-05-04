@@ -53,7 +53,7 @@ export const loadWeather = async function (loc) {
       sunset: convertTime(data.sys.sunset),
       date: convertTime(data.dt, "full"),
       // iconBig: `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`,
-      // iconSmall: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+      iconSmall: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
       description:
         data.weather[0].description[0].toUpperCase() +
         data.weather[0].description.slice(1),
