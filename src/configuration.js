@@ -13,19 +13,19 @@ const timeout = function (s) {
 };
 
 export const AJAX = async function (url) {
-//   try {
-  const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
-  const data = await res.json();
+  try {// eslint-disable-line
+    const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
+    const data = await res.json();
 
-  console.log(data);
-  if (!res.ok) {
-    throw new Error(
-      `${data.message[0].toUpperCase() + data.message.slice(1)} (${res.status
-      })`,
-    );
+    console.log(data);
+    if (!res.ok) {
+      throw new Error(
+        `${data.message[0].toUpperCase() + data.message.slice(1)} (${res.status
+        })`,
+      );
+    }
+    return data;
+  } catch (err) {
+    throw err;
   }
-  return data;
-//   } catch (err) {
-  // throw err;
-//   }
 };

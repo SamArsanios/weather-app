@@ -30,10 +30,9 @@ const weatherLocation = function () {
 
 const searchWeather = async function (city) {
   try {
-    // console.log(city);
+    console.log(city);
     view.showSpinner();
     // Get query from search input
-    // const query = view.getWeather();
     if (!city) return;
 
     // Load weather based on search query

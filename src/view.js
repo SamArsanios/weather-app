@@ -69,7 +69,7 @@ class View {
   addHandlerSearch(handler) {
     this.searchBar.addEventListener('submit', (e) => {
       e.preventDefault();
-      // console.log(e.target.city.value);
+      console.log(e.target.city.value);
       handler(e.target.city.value);
     });
   }
