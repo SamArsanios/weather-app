@@ -2,7 +2,7 @@ import * as weatherData from './weatherData';
 import view from './view';
 import './styles.css';
 
-const loadLocation = async function (position) {
+const loadLocation = async (position) => {
   try {
     const { latitude } = position.coords;
     const { longitude } = position.coords;
@@ -18,7 +18,7 @@ const loadLocation = async function (position) {
   }
 };
 
-const weatherLocation = function () {
+const weatherLocation = () => {
   view.showSpinner();
 
   if (navigator.geolocation) {
@@ -28,7 +28,7 @@ const weatherLocation = function () {
   }
 };
 
-const searchWeather = async function (city) {
+const searchWeather = async (city) => {
   try {
     console.log(city);
     view.showSpinner();
@@ -46,12 +46,12 @@ const searchWeather = async function (city) {
   }
 };
 
-const convert = function (unit) {
+const convert = (unit) => {
   weatherData.convertUnit(unit);
   view.renderWeather(weatherData.weather.data);
 };
 
-const init = function () {
+const init = () => {
   view.addHandlerRender(weatherLocation);
   view.addHandlerSearch(searchWeather);
   view.addHandlerConvert(convert);

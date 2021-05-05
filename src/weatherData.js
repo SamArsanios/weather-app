@@ -6,7 +6,7 @@ export const weather = {
   data: {},
 };
 
-const convertTime = function (timestamp, format = 'short') {
+const convertTime = (timestamp, format = 'short') => {
   const options = format === 'full'
     ? { dateStyle: 'full', timeStyle: 'short' }
     : { timeStyle: 'short' };
@@ -18,7 +18,7 @@ const convertTime = function (timestamp, format = 'short') {
   return time;
 };
 
-export const convertUnit = function (unit) {
+export const convertUnit = (unit) => {
   if (unit === 'imperial') {
     weather.data.temp = Math.round((weather.data.temp * 9) / 5 + 32);
     weather.data.temperature = Math.round((weather.data.temperature * 9) / 5 + 32);
@@ -34,7 +34,7 @@ export const convertUnit = function (unit) {
   }
 };
 
-export const loadWeather = async function (loc) {
+export const loadWeather = async (loc) => {
   const parameter = Array.isArray(loc)
     ? `lat=${loc[0]}&lon=${loc[1]}`
     : `q=${loc}`;
