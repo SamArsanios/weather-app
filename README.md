@@ -11,8 +11,8 @@ This is a simple weather application that shows the weather of different places 
 ![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 ![JAVASCRIPT](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E")
 
-## Live Demo
-https://samarsanios.github.io/weather-app/
+## Project Demo
+[Live Project Link](https://samarsanios.github.io/weather-app/)
 
 ## Set Up 
 To get started open the directory where you will save this repo:
